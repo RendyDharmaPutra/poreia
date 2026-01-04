@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { LIST_COURIERS } from "../../../contants/list-couriers";
+import { LIST_COURIERS } from "../../../constants/list-couriers";
 
 const awb = ref("");
 const selectedCourier = ref("");
