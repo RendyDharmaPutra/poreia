@@ -1,5 +1,7 @@
 <template>
   <UApp>
+    <Header />
+
     <Suspense>
       <UMain>
         <RouterView />
