@@ -8,15 +8,15 @@ const isLoading = computed(() => trackStore.state.status === "loading");
 
 const awb = ref("");
 const selectedCourier = ref("");
-const errorMessage = ref<string | null>(null);
+const formError = ref<string | null>(null);
 
 const onSubmit = async () => {
   if (!awb.value || !selectedCourier.value) {
-    errorMessage.value = "Harap masukkan nomor resi dan ekspedisi.";
+    formError.value = "Harap masukkan nomor resi dan ekspedisi.";
     return;
   }
 
-  errorMessage.value = null;
+  formError.value = null;
   await trackStore.load(selectedCourier.value, awb.value.trim());
 };
 </script>
@@ -42,7 +42,5 @@ const onSubmit = async () => {
       @click="onSubmit"
     />
   </section>
-  <p v-if="errorMessage" class="-mt-4 text-sm text-error">
-    *{{ errorMessage }}
-  </p>
+  <p v-if="formError" class="-mt-4 text-sm text-error">*{{ formError }}</p>
 </template>
