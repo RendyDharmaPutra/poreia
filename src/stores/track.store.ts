@@ -21,14 +21,21 @@ export const useTrackStore = defineStore("track", () => {
 
     state.status = "loading";
 
-    const res = await trackPackageService(courier, awb);
-    if (res.status === 200) {
-      state.data = res.data!;
-    } else {
-      state.error = res.message;
-    }
+    try {
+      const res = await trackPackageService(courier, awb);
+      if (res.status === 200) {
+        state.data = res.data!;
+        state.status = "success";
+      } else {
+        state.error = res.message;
+        state.status = "error";
+      }
+    } catch (error) {
+      console.error(`unexpected error: ${error}`);
 
-    state.status = "success";
+      state.error = "Terjadi kesalahan tidak diketahui";
+      state.status = "error";
+    }
   };
 
   const reset = () => Object.assign(state, initialState());
