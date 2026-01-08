@@ -1,10 +1,9 @@
 import { defineStore } from "pinia";
 import { reactive } from "vue";
 import { trackPackageService } from "../service/trackPackage.service";
+import { TrackPackage } from "../types/track-package.type";
 
 type AsyncStatus = "idle" | "loading" | "success" | "error";
-
-type TrackPackage = any[];
 
 function initialState() {
   return {

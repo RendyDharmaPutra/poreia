@@ -1,7 +1,9 @@
+import type { TrackPackage } from "../types/track-package.type";
+
 type TrackPackageResponse = {
   status: number;
   message: string;
-  data?: any[];
+  data?: TrackPackage;
 };
 
 export const trackPackageService = async (
