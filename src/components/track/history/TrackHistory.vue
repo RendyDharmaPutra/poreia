@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { useDateFormat } from "@vueuse/core";
+import type { TrackPackageHistory } from "../../../types/track-package.type";
 
 const props = defineProps<{
-  histories: {
-    date: string;
-    desc: string;
-  }[];
+  histories: TrackPackageHistory[];
 }>();
 </script>
 >

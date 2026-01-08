@@ -1,4 +1,4 @@
-type TrackPackageSummary = {
+export type TrackPackageSummary = {
   amount?: string;
   awb: string;
   courier: string;
@@ -9,9 +9,9 @@ type TrackPackageSummary = {
   weight?: string;
 };
 
-type TrackPackageHistory = {
+export type TrackPackageHistory = {
   date: string;
-  desc?: string;
+  desc: string;
   location?: string;
 };
 
