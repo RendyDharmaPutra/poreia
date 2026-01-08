@@ -9,7 +9,7 @@ const awb = ref("");
 const selectedCourier = ref("");
 const errorMessage = ref<string | null>(null);
 
-const onSubmit = () => {
+const onSubmit = async () => {
   console.log(`AWB: ${awb.value}, Courier: ${selectedCourier.value}`);
 
   if (!awb.value || !selectedCourier.value) {
@@ -18,7 +18,7 @@ const onSubmit = () => {
   }
 
   errorMessage.value = null;
-  trackStore.load();
+  await trackStore.load(selectedCourier.value, awb.value.trim());
 };
 </script>
 
