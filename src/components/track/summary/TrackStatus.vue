@@ -23,7 +23,7 @@ const isDelivered = computed(() => props.status === "DELIVERED");
 
         <div class="w-full">
           <p class="font-bold text-base md:text-lg">
-            {{ isDelivered ? "Paket Diterima" : "Paket Dikirim" }}
+            {{ isDelivered ? "Paket Diterima" : "Paket dalam Perjalanan" }}
           </p>
         </div>
       </div>
